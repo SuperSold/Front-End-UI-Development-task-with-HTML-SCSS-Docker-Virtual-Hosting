@@ -1,12 +1,14 @@
 $primary-color: #f52f6a;
 $hover-color: rgb(214, 214, 212);
 $background-light: #ffffff;
-$background-highlight: #e8f0fe;
 $text-color: #0f0f0f;
 $font-stack: 'DM sans', sans-serif;
 $max-width: 1000px;
 $padding-section: 4rem 2rem;
 
+/* =========================
+   GLOBAL
+========================= */
 body {
   margin: 0;
   padding: 0;
@@ -21,15 +23,10 @@ body {
   padding: $padding-section;
   text-align: center;
 }
-  @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
-.bounce-effect {
-  animation: bounce 0.5s ease;
-}
-
+/* =========================
+   BUTTONS
+========================= */
 .btn-primary,
 a.cta-btn {
   display: inline-block;
@@ -44,26 +41,28 @@ a.cta-btn {
   &:hover {
     background-color: $hover-color;
   }
-
 }
 
+/* =========================
+   IDEAS SECTION
+========================= */
 .ideas-section {
   background: $background-light;
   position: relative;
   min-height: 700px;
 
+  
+  perspective: 1000px;
+
   .container {
     h2 {
       font-size: 5rem;
-      color: $text-color;
       margin-bottom: 1rem;
     }
 
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
-      margin: 0 auto 2rem;
-      max-width: 700px;
+      margin-bottom: 2rem;
     }
   }
 
@@ -89,83 +88,66 @@ a.cta-btn {
       align-items: center;
       justify-content: center;
 
+      
+      pointer-events: auto;
+
+      
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  box-shadow 0.4s ease;
+
+      transform-style: preserve-3d;
+
       img {
         width: 60%;
         height: auto;
         object-fit: contain;
+        transition: transform 0.4s ease;
+      }
+
+      /*  3D HOVER EFFECT */
+      &:hover {
+        transform: rotateY(15deg) rotateX(10deg) scale(1.1);
+        box-shadow: 0 25px 50px rgba(0, 150, 255, 0.3);
+
+        img {
+          transform: translateZ(20px);
+        }
       }
     }
 
-    
-.box-1 { top: 90px; left: 287px; }
-.box-2 { top: 240px; left: 150px;}
-.box-3 { top: 380px; left: 287px;}
-.box-4 { top: 517px; left: 150px;}
-.box-5 { top: 380px; left: 13px;}
-.box-6 { top: 90px; right: 220px; }
-.box-7 { top: 240px; right: 350px; }
-.box-8 { top: 380px; right: 220px; }
-.box-9 { top: 380px; right: 50px; }
-.box-10 { top: 517px; right: 50px; }
+    /* POSITIONING */
+    .box-1 { top: 90px; left: 287px; }
+    .box-2 { top: 240px; left: 150px; }
+    .box-3 { top: 380px; left: 287px; }
+    .box-4 { top: 517px; left: 150px; }
+    .box-5 { top: 380px; left: 13px; }
+    .box-6 { top: 90px; right: 220px; }
+    .box-7 { top: 240px; right: 350px; }
+    .box-8 { top: 380px; right: 220px; }
+    .box-9 { top: 380px; right: 50px; }
+    .box-10 { top: 517px; right: 50px; }
   }
 }
 
-
+/* =========================
+   HERO SECTION
+========================= */
 .eager-hero {
   width: 100%;
   height: 640px;
-  background-size: cover;
   background-image: url("../images/background.svg");
+  background-size: cover;
   background-position: center;
-  text-align: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   position: relative;
-  overflow: hidden;
-  color: $text-color;
-
-  .left-decor-image,
-  .decor-image {
-    position: absolute;
-    top: 0;
-    pointer-events: none;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  }
-
-  .decor-image {
-    right: 0;
-    width: 35%;
-    max-width: 600px;
-    z-index: 0;
-  }
-
-  .left-decor-image {
-    left: 0;
-    width: 13%;
-    max-width: 400px;
-    z-index: 0;
-  }
 
   .content {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
-    padding: 0 1rem;
-
     h2 {
       font-size: 5rem;
-      color: #ffffff;
-      line-height: 1.2;
-      font-weight: 700;
-      font-family: sans-serif;
-      margin-bottom: 2rem;
+      color: white;
     }
   }
 }
