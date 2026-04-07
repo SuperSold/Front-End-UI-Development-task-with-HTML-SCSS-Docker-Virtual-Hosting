@@ -11,7 +11,7 @@ It includes dynamic UI interactions, a task management system, and 3D hover effe
 
 ### 🎨 UI & Design
 - Responsive layout
-- SCSS-based styling (modular & maintainable)
+- SCSS-based styling 
 - 3D hover effects on icons
 - Smooth transitions and animations
 
@@ -32,7 +32,7 @@ It includes dynamic UI interactions, a task management system, and 3D hover effe
 
 - HTML5  
 - SCSS (SASS)  
-- JavaScript (Vanilla JS)  
+- JavaScript 
 - Docker  
 - NGINX  
 
@@ -90,6 +90,6 @@ index.html
 ## 📌 Future Improvements
 
 - Add API integration
-- Improve mobile responsiveness
+- Improve responsiveness
 - Add dark mode
 - Enhance animations
